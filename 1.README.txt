@@ -1,0 +1,19 @@
+1. Open 'cellTrack_ParseStacks_params.txt' and change parameters where necessary
+
+2. Open the file 'cellTrack_ParseStacks_v3.m'
+
+3. If the parameter files are in the same folder as the scripts, run the
+   following in command line: cellTrack_ParseStacks_v3(cellTrack_ParseStacks_params.txt)
+
+   If the parameter files are in a subfolder, change the parameterfile pathname
+
+4. CellTrack_ParseStacks will sort your image files in the following structure:
+   - Raw Images (Main Folder)
+   - Field (Subfolder)
+   - Channel (Sub-subfolder)
+   - Timetpoint (Filename e.g. '001')
+
+   The final timepoint sorted files will have appended zero's before the numbers to ensure correct sorting ('01.tif' before '11.tif')
+
+5. After the images have been sorten and the file names changed, you run 'cellTrack_Main_v3'
+   

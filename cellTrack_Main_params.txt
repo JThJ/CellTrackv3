@@ -1,0 +1,83 @@
+
+
+%-----------------------------------------------------------------------------------------------------------------------
+
+
+% Path of the parent (main) folder for current analysis
+params.parentFolderForAnalysis = 'Y:\homedirs\gordonov\Mun_Dox_231LAH2B_2DMigr_Chk1MK2_siRNA_102815_v2'
+
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Path of the folder that contains the time sequence of images for all the fields. These are images separated into folders
+%from cellTrack_parseStacks_v2.
+params.inputImgsPath = 'C:\Users\Thijmen\Dropbox (MIT)\Cell_migration_data_Simon\1.Endothelial_hematopoietic_transition_project\CellTrackv3\Raw Images - A01'
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Set whether the images are aquired on 'Cellomics' or on Nikon Spinning Disk ('NSD') of on IncucyteZoom ('Incucyte')
+params.microscope = 'NSD';
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Set the path of the tracking analysis file output.
+params.outputPath = ''
+
+%---------------------------------------------------------------------------------------------------
+%Select number fo channels that were imaged - 1 (only actin) or 2 (actin and nuclei).
+params.numChannels = 2
+
+%---------------------------------------------------------------------------------------------------
+%Set the number of time points per field and number of fields imaged:
+params.numTimePts = 85
+params.numFields = 180
+
+%---------------------------------------------------------------------------------------------------
+%Number of hours after addition of drug/stimulation when imaging started.
+params.numHoursStimElapse = 10
+
+%---------------------------------------------------------------------------------------------------
+%Set the dimensions of each frame
+params.sizeI = [1024,1024]
+
+%---------------------------------------------------------------------------------------------------
+%Set the pixel size (in microns)
+params.sizePix = 1.3
+params.sizePx = 1.3
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Segmentation of nuclei, if applicable
+
+    params.nucSeg.nucSegType = 'PSD';	
+    params.nucSeg.tophatDiskR = 40;
+    params.nucSeg.maxH = 0.1;
+    params.nucSeg.otsuCorrectFrac = 0.5;
+    params.nucSeg.PSDparams = [0.01,4];
+    params.nucSeg.minObjSize = 100;
+    params.nucSeg.maxObjSize= 5000;
+    params.nucSeg.gSize = 4;
+    params.nucSeg.gSigma = 4;
+    params.nucSeg.solidityThresh = 0.8;
+    params.nucSeg.GVFbool = 1;
+    params.nucSeg.GVFiter = 10;
+    params.nucSeg.splitRegFactor = 5;
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Do you want to automatically segment and identify objects but with manual threshold selection of subset of data (see params.cbSeg.numManualsegFrames)
+%or do it manually for each image?
+    params.boolAutoCBseg = 1;	
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Cell body segmentation (actin channel)
+
+    params.cbSeg.segmentLocal = 1; %1 means just make local mask same as global (still do local nuclei segmentation though)
+    params.cbSeg.numManualsegFrames = 1;	 
+    params.cbSeg.tophatDiskR = 50;
+    params.cbSeg.otsuCorrectFrac = 0.01;
+    params.cbSeg.edgeCorrectFrac = 0.01;
+    params.cbSeg.minObjSize = 100;
+    params.cbSeg.splitRegFactor = 0.2;
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Set parameters for tracking
+
+    params.maxDistTrack = 40; %in pixels
+    params.mem = 10; % # frames particle allowed to be "lost"
+    params.minTrackLength = 5; %in # of frames

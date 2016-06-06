@@ -1,0 +1,31 @@
+%path where scripts for analysis are stored
+params.scriptsDir = 'C:\Users\Simon\Dropbox (MIT)\Lauffenburger Research 2012\Image Processing Scripts\Doxorubicin Project Analyses\Cell Tracking and Analysis with Nuc v2\Scripts'
+
+%-----------------------------------------------------------------------------------------------------------------------
+% Path of the parent (main) folder for current analysis
+params.parentFolderForAnalysis = 'Y:\homedirs\gordonov\Mun_Dox_231LAH2B_2DMigr_Chk1MK2_siRNA_102815_v2'
+
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Path where whole set feature info and scripts are stored
+params.wcfFolderPath = 'C:\Users\Simon\Dropbox (MIT)\Lauffenburger Research 2012\Image Processing Scripts\whole cell features'
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Set whether the images are aquired on 'Cellomics' or on Nikon Spinning Disk ('NSD') of on IncucyteZoom ('Incucyte')
+params.microscope = 'NSD';
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Path where the track data (processedFramesForAnalysis.mat)-containing subfolders are stored
+params.inputPath = 'Y:\homedirs\gordonov\Mun_Dox_231LAH2B_2DMigr_Chk1MK2_siRNA_102815_v2\Output\Tracking Data'
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Set the path of the tracking analysis file output.
+params.outputPath = 'Y:\homedirs\gordonov\Mun_Dox_231LAH2B_2DMigr_Chk1MK2_siRNA_102815_v2\Output\Tracking Analysis Output'
+
+%---------------------------------------------------------------------------------------------------
+%Actual time point (frame number in sequence) when treatment was added (first frame number after treatment addition)
+params.frameTreatAdded = 1
+
+%---------------------------------------------------------------------------------------------------
+%Number of hours after addition of drug/stimulation when imaging started.
+params.numHoursStimElapse = 10

@@ -1,0 +1,50 @@
+%-----------------------------------------------------------------------------------------------------------------------
+%Path of the folder that contains the time sequence of images for all the fields that need to be organized into folders. This is where the .nd2 TIFF are exported.
+params.inputImgsPath = 'C:\Users\Thijmen\Dropbox (MIT)\Cell_migration_data_Simon\1.Endothelial_hematopoietic_transition_project\EHT time lapse\160512\A01'
+
+
+%---------------------------------------------------------------------------------------------------
+%Do you want to create .avi movies for each field of view? 0 = no, 1 = yes
+params.boolMakeAVIMovies = 0
+
+%---------------------------------------------------------------------------------------------------
+%Number of hours after addition of drug/stimulation when imaging started.
+params.numHoursStimElapse = 0
+
+%---------------------------------------------------------------------------------------------------
+%IF want to create avi movie for each stack, designate file location of time stamps. Note that this file must be exported MANUALLY from the .nd2 file by opening it in 
+%Nikon elements viewer and saving it at a text file. Note that time stamps are per field of view, not per channel.
+params.timeStampsFilePath = 'C:\Users\Simon\Desktop\Mun_Dox_231LAH2B_2DMigr_Chk1MK2_siRNA_102815\Nikon_Recorded_Data.xlsx'
+
+%---------------------------------------------------------------------------------------------------
+%Set the number of time points per field and number of fields imaged:
+params.numTimePts = 147
+params.numFields = 4
+
+
+%---------------------------------------------------------------------------------------------------
+%Set the dimensions of each frame
+params.sizeI = [2560,2160]
+
+%---------------------------------------------------------------------------------------------------
+%Select number of channels that were imaged - 1 (only actin) or 2 (actin and nuclei).
+params.numChannels = 1
+
+%---------------------------------------------------------------------------------------------------
+%Name the channels imaged ***in ORDER*** of channel number
+params.channelNames = {'GFP'}
+
+%---------------------------------------------------------------------------------------------------
+%Designate what conditions the xy positions correspond to. For example, for 20 xy positions, 1-10 may be control, and 11-20 may be drug of one dose, etc.
+params.conds ={'field_'}
+params.condsXYmin = [1]
+params.condsXYmax = [8]
+
+%-----------------------------------------------------------------------------------------------------------------------
+%Set whether the images are aquired on 'Cellomics' or on Nikon Spinning Disk ('NSD') of on IncucyteZoom ('Incucyte')
+params.microscope = 'NSD';
+
+% Path of the parent (main) folder for current analysis
+params.parentFolderForAnalysis = 'C:\Users\Thijmen\Dropbox (MIT)\Cell_migration_data_Simon\1.Endothelial_hematopoietic_transition_project\test'
+
+
